@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta 
+        http-equiv="Content-Security-Policy" 
+        content="default-src 'self'; 
+          script-src 'self'; 
+          font-src 'self' https://fonts.gstatic.com;
+          style-src 'self' https://fonts.googleapis.com"
+          >
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Odor+Mean+Chey&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <title>OMGEE PERYA COLOR GAME!</title>
+  </head>
+<body>
+    <main>
+        <div class="glassmorphism card">
+            <div class="card-header">
+              <a href="./index.html"><img src="./assets/images/arrow-left-solid.svg" alt="Back button" width="45"></a>
+              <img src="./assets/images/omgee-logo.svg" alt="omgee-logo" width="125" >
+            </div>
+            <div class="card-body">
+              <div class="dice">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+              </div>
+              <div class="dice">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+              </div>
+              <div class="dice">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+              </div>
+            </div>
+
+            <div class="card-footer">
+                  <button id="roll" class="roll-btn menu_btn w-25 text-lg">Roll</button>
+                  <button id="shuffle" class="roll-btn menu_btn w-25 text-lg">Shuffle</button>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="./renderer.js"></script>
+    <!-- <script src="./sweetalerts2/sweetalerts2.min.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "omgee-perya-color-game",
+  "version": "1.0.0",
+  "description": "Perya Color Game",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Lester Fong",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.1.0"
+  }
+}
