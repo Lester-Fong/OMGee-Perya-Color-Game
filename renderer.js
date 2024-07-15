@@ -13,16 +13,15 @@ const randomDice = () => {
         return;
     }
     dices.forEach((dice, ndx) => {
-        const random = Math.floor(Math.random() * 6);
-        const duration = ndx == 0 ? 5 : ndx == 1 ? 6 : 8;
+        const random = Math.floor(Math.random() * 7);
+        const duration = ndx == 0 ? 6 : ndx == 1 ? 7 : 9;
         
         // for different kinds of spinning of the dice
         let randomBoxDegree = Math.floor(Math.random() * (790 - 360 + 1) + 360);
-        console.log(randomBoxDegree);
         dice.style.setProperty('--x_deg', `${randomBoxDegree}deg`);
         dice.style.setProperty('--y_deg', `${randomBoxDegree}deg`);
 
-        if (random >= 1 && random <= 6) {
+        if (random >= 1 && random <= 7) {
            rollDice(random, dice, duration, ndx);
         } else {
             randomDice();
@@ -63,32 +62,32 @@ const transformDice = (random, dice) => {
         default:
             break;
     }
-    dice.style.animation = 'none';
 }
 
 const rollDice = (random, dice, duration, ndx) => {
     if (animationInProgress) {
         return;
     }
+    
+    transformDice(random, dice);
     dice.style.animation = `rolling ${duration.toString()}s`;
     rollBtn.disabled = true;
     shuffleBtn.disabled = true;
     
-
     setTimeout(() => {
-        transformDice(random, dice)
-
         if (ndx == dices.length - 1) {
             animationInProgress = false;
             rollBtn.disabled = false;
             shuffleBtn.disabled = false;
         } 
+
+        dice.style.animation = 'none';
     }, duration * 1000 + 1000);
 }
 
 const shuffleDice = () => { 
     dices.forEach(dice => {
-        const random = Math.floor(Math.random() * 6);
+        const random = Math.floor(Math.random() * 7);
         transformDice(random, dice);
     })
 }
