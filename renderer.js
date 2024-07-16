@@ -1,8 +1,10 @@
+import Swal from "./sweetalerts2/sweetalerts2.min.js";
+
 let animationInProgress = false;
 const dices = document.querySelectorAll(".dice");
 const rollBtn = document.getElementById('roll');
 const shuffleBtn = document.getElementById('shuffle');
-let root = document.documentElement;
+let animationDone = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     shuffleDice();
@@ -29,6 +31,7 @@ const randomDice = () => {
 
         if (ndx == dices.length - 1) {
             animationInProgress = true;
+            
         }
     })
 }
@@ -79,10 +82,19 @@ const rollDice = (random, dice, duration, ndx) => {
             animationInProgress = false;
             rollBtn.disabled = false;
             shuffleBtn.disabled = false;
+            
+            //swal here
+            Swal.fire({
+                title: 'You rolled a dice!',
+                text: `You rolled a ${random}!`,
+                icon: 'success',
+                confirmButtonText: 'Nice!'
+            });
         } 
 
         dice.style.animation = 'none';
     }, duration * 1000 + 1000);
+
 }
 
 const shuffleDice = () => { 
