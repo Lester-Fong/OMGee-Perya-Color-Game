@@ -10,7 +10,7 @@ let winningDices = [];
 let diceSize = dices[0].offsetWidth;
 
 // set the size of the dice
-document.documentElement.style.setProperty('--dice-size', `${diceSize / 2 - 5 }px`);
+document.documentElement.style.setProperty('--dice-size', `${(diceSize / 40) + 1.20 }rem`);
 // set current time of the audio to start
 winnerAudio.currentTime = 0;
 audio.currentTime = 0;
