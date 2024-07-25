@@ -7,6 +7,13 @@ const shuffleBtn = document.getElementById('shuffle');
 const audio = document.getElementById("gameAudio");
 const winnerAudio = document.getElementById("winnerAudio");
 let winningDices = [];
+let diceSize = dices[0].offsetWidth;
+
+// set the size of the dice
+document.documentElement.style.setProperty('--dice-size', `${diceSize / 2 - 5 }px`);
+// set current time of the audio to start
+winnerAudio.currentTime = 0;
+audio.currentTime = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     shuffleDice();
@@ -126,7 +133,7 @@ const rollDice = (random, dice, duration, ndx) => {
 const onDisplayWinners = () => {
     winnerAudio.play();
     Swal.fire({
-        title: 'Winning Dices',
+        title: 'Winning Colors!',
         html: `
         <div class="flex">
             ${winningDices.map(dice => `
@@ -139,7 +146,7 @@ const onDisplayWinners = () => {
         </div>
         <div class="flex mt-2">
             ${winningDices.map(dice => `
-                <h3 style="color: ${dice == 'WHITE'? 'black' : dice}">${dice}</h3>
+                <h2 style="color: black">${dice}</h2>
             `).join('')}
         </div>
         `,
