@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+          script-src 'self' https://cdn.skypack.dev; 
+          font-src 'self' https://fonts.gstatic.com;
+          style-src 'self' 'unsafe-inline' https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Odor+Mean+Chey&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
     <title>HOW TO PLAY</title>
 </head>
+
 <body>
-    <h1>HOW TO PLAY PAGE</h1>
+    <main>
+        <div class="glassmorphism card">
+            <div class="card-header">
+                <a href="./index.html"><img src="./assets/images/arrow-left-solid.svg" alt="Back button" width="45"></a>
+                <img src="./assets/images/omgee-logo.svg" alt="omgee-logo" width="125">
+            </div>
+            <div class="card-body-two grid">
+                <div class="flex-start">
+                    <h1 class="number-circle">1</h1>
+                    <h2>Start the game</h2>
+                </div>
+                <div class="flex-start">
+                    <h1 class="number-circle">2</h1>
+                    <h2>Click Roll</h2>
+                </div>
+                <div class="flex-start">
+                    <h1 class="number-circle">3</h1>
+                    <h2>Wait for dice to stop rolling</h2>
+                </div>
+                <div class="flex-start">
+                    <h1 class="number-circle">4</h1>
+                    <h2>Display winning colors</h2>
+                </div>
+                <div class="flex-start">
+                    <h1 class="number-circle">5</h1>
+                    <h2>Win the game</h2>
+                </div>
+                <div class="flex-start">
+                    <h1 class="number-circle">6</h1>
+                    <h2>Play again</h2>
+                </div>
+            </div>
+
+            <audio id="gameAudio">
+                <source src="./assets/audio/drumroll_cut.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="winnerAudio">
+                <source src="./assets/audio/cheer.mp3" type="audio/mpeg">
+            </audio>
+    </main>
 </body>
+
 </html>
