@@ -21,8 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const shuffleDice = () => { 
     dices.forEach(dice => {
-        const random = Math.floor(Math.random() * 7);
+        let random = Math.floor(Math.random() * 7); // 0 - 6
         transformDice(random, dice);
+        dice.style.animation = `reverse_rolling 1s`;
+
+        setTimeout(() => {
+            dice.style.animation = 'none';
+        }, 1000);
     })
 }
 

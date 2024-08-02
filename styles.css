@@ -6,6 +6,8 @@
   --white-color: #ffffff;
   --x_deg: 455deg;
   --y_deg: 455deg;
+  --reverse_x_deg: 360deg;
+  --reverse_y_deg: 360deg;
   --dice-size: 99px;
 }
 
@@ -38,7 +40,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 5rem;
+    padding-top: 4rem;
     width: 75%;
     max-width: 2400px;
 }
@@ -47,8 +49,9 @@ main {
     font-family: "Nerko One", cursive;
     font-weight: 700;
     font-style: normal;
-    font-size: 5.5rem;
+    font-size: 7.50rem;
     letter-spacing: .3rem;
+    line-height: .8;
     color: var(--secondary-color);
 }
 
@@ -56,7 +59,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 2rem;
+    padding-top: 2.75rem;
     width: 100%;
 }
 
@@ -132,6 +135,12 @@ main {
 @keyframes rolling {
     20%  {
         transform: rotateX(var(--x_deg)) rotateY(var(--y_deg));
+    }
+}
+
+@keyframes reverse_rolling {
+    55%  {
+        transform: rotateX(var(--reverse_x_deg)) rotateY(var(--reverse_y_deg));
     }
 }
 
